@@ -31,3 +31,6 @@ body {
     text-wrap: balance;
   }
 }
+.filter-black {
+  filter: brightness(0) saturate(100%);
+}
