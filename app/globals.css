@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+.colorown{
+  background-color: rgb(187, 192, 194);
+}
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
