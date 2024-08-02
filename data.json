@@ -1,14 +1,14 @@
 [
     {
       "id": 1,
-       "place":"gas station",
-       "value":"gas station",
-       "icon":"/gas-pump.png"
+       "place":"Hindustan times",
+       "value":"Hindustan times",
+       "icon":"/hd.png"
     },
     {
         "id": 2,
-       "place":"Restaurants",
-       "value":"Restaurants",
-       "icon":"/restaurant.png"
+       "place":"Times of India",
+       "value":"Times of India",
+       "icon":"/timesof.png"
     }
 ]
