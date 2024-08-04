@@ -9,7 +9,7 @@ const BussinesList = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const url = "https://newsapi.org/v2/top-headlines?country=in&apiKey=2deecf3f34514f4692c9023185cb916a";
+        const url = process.env.NEXT_PUBLIC_API_URL;
         const response = await fetch(url);
         const result = await response.json();
         setData(result.articles);
