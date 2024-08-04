@@ -1,0 +1,14 @@
+[
+    {
+      "id": 1,
+       "place":"Sports",
+       "value":"Sports",
+       "icon":"/sports.jpg"
+    },
+    {
+        "id": 2,
+       "place":"Entertainment",
+       "value":"Entertainment",
+       "icon":"/ent.jpeg"
+    }
+]
