@@ -16,7 +16,8 @@ const NewsType = () => {
                 <Image
                   src={item.icon}
                   fill
-                  style={{ objectFit: 'cover' }}
+                  // style={{ objectFit: 'cover' }}
+                  className='bg-cover bg-center'
                   alt={item.value}
                 />
               </div>

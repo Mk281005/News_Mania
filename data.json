@@ -3,12 +3,38 @@
       "id": 1,
        "place":"Hindustan times",
        "value":"Hindustan times",
+       "link":"https://www.hindustantimes.com/feeds/rss/trending/rssfeed.xml",
        "icon":"/hd.png"
     },
     {
         "id": 2,
        "place":"Times of India",
        "value":"Times of India",
+       "link":"https://timesofindia.indiatimes.com/rssfeedstopstories.cms",
        "icon":"/timesof.png"
+    },
+    {
+        "id": 3,
+        "place": "The Indian Express",
+        "value": "The Indian Express",
+        "icon": "/Indexp.png"
+    },
+    {
+        "id": 4,
+        "place": "NDTV",
+        "value": "NDTV",
+        "icon": "/NDTV1.jpg"
+    },
+    {
+        "id": 5,
+        "place": "CNN-News18",
+        "value": "CNN-News18",
+        "icon": "/cnn.jpg"
+    },
+    {
+        "id": 6,
+        "place": "BBC News",
+        "value": "BBC News",
+        "icon": "/bbc.jpg"
     }
 ]
