@@ -1,11 +1,13 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import PlacesList from "./PlacesList.jsx";
-
+import { useMyContext } from "./MyContext.js";
 const BussinesList = () => {
   const [data, setData] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
-
+  const saved=require("../rss_feed_data.json")
+  console.log(saved);
+  
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -17,10 +19,10 @@ const BussinesList = () => {
         console.error("Error fetching data:", error);
       }
     };
-
+   
     fetchData();
   }, []);
-
+  
   const handleNext = () => {
     if (currentIndex + 4 < data.length) {
       setCurrentIndex(currentIndex + 4);

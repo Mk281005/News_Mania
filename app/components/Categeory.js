@@ -2,10 +2,12 @@
 import React from "react";
 import data from "/data.json";
 import Image from "next/image";
-
+import { useMyContext } from "./MyContext";
 function Category() {
-  const Channels =(e) =>{
-        console.log(e);
+  const { state, setState } = useMyContext();
+  const Channels =(link) =>{
+        setState({ ...state, channelLink: link });
+        console.log(link);
   }
   return (
     <div className="m-3">
@@ -16,7 +18,7 @@ function Category() {
             <div
               key={item.id}
               className="flex flex-col p-2 items-center justify-center font-semibold text-sm cursor-pointer rounded-xl h-[80px] transition duration-300 ease-in-out transform hover:bg-white hover:scale-105"
-              onClick={()=>{Channels(item.id)}}
+              onClick={()=>{Channels(item.link)}}
             >
               <div className="relative w-[80px] h-[80px]">
                 <Image
