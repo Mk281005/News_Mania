@@ -4,6 +4,9 @@ import data from "/data.json";
 import Image from "next/image";
 
 function Category() {
+  const Channels =(e) =>{
+        console.log(e);
+  }
   return (
     <div className="m-3">
       <div>
@@ -13,6 +16,7 @@ function Category() {
             <div
               key={item.id}
               className="flex flex-col p-2 items-center justify-center font-semibold text-sm cursor-pointer rounded-xl h-[80px] transition duration-300 ease-in-out transform hover:bg-white hover:scale-105"
+              onClick={()=>{Channels(item.id)}}
             >
               <div className="relative w-[80px] h-[80px]">
                 <Image

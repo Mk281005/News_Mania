@@ -3,29 +3,8 @@ import React, { useState, useEffect } from "react";
 
 
 const PlacesList = ({ data, index }) => {
-  const [res, setRes] = useState(null);
-
-  useEffect(() => {
-    var url =process.env.NEXT_PUBLIC_API_URL;
-      
-    var req = new Request(url);
-    fetch(req)
-      .then((response) => response.json()) // Parse JSON data
-      .then((data) => {
-        console.log(data.articles);
-        setRes(data.articles); // Set the articles to state
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
-  }, []);
-
-  if (res && res.length > 0) {
-    console.log(res[0].title + " " + 1);
-  } else {
-    console.log("No data available");
-  }
-
+ 
+  
   const articlesToShow = data.slice(index, index + 4);
 
   return (
