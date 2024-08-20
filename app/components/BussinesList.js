@@ -5,8 +5,24 @@ import { useMyContext } from "./MyContext.js";
 const BussinesList = () => {
   const [data, setData] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const saved=require("../rss_feed_data.json")
-  console.log(saved);
+  const { state } = useMyContext();
+  // if(state.channelLink!=""){
+  // const saved=require("./rss_feed_data.json")
+  // console.log(saved);}
+  useEffect(() => {
+    const fetchRSSData = async () => {
+      if (state.channelLink !== "") {
+        const response = await fetch(`/api/rssFeed?channelLink=https://www.hindustantimes.com/feeds/rss/trending/rssfeed.xml`);
+        if (!response.ok) {
+          throw new Error(`Error: ${response.status}`);
+        }
+        const result = await response.json();
+        console.log(result);
+      }
+    };
+  
+    fetchRSSData();
+  }, [state.channelLink]);
   
   useEffect(() => {
     const fetchData = async () => {
@@ -22,6 +38,12 @@ const BussinesList = () => {
    
     fetchData();
   }, []);
+  if(state.channelLink!=""){
+  console.log(state.channelLink+" "+"HI");}
+  else{
+    console.log("hI");
+  }
+  
   
   const handleNext = () => {
     if (currentIndex + 4 < data.length) {
