@@ -1,20 +1,19 @@
-// /app/api/data/route.js
-export async function GET(request) {
-  try {
-    // Example data
-    const data = {
-      message: "Hello from the API!",
-      timestamp: new Date().toISOString()
-    };
+import { NextResponse } from "next/server";
+const Parser = require('rss-parser');
+const parser = new Parser();
 
-    return new Response(JSON.stringify(data), {
-      status: 200,
-      headers: { 'Content-Type': 'application/json' }
-    });
-  } catch (error) {
-    return new Response(JSON.stringify({ error: 'Failed to fetch data' }), {
-      status: 500,
-      headers: { 'Content-Type': 'application/json' }
-    });
-  }
+export async function GET(request) {
+  const { searchParams } = new URL(request.url);
+  const channelLink = searchParams.get('channelLink') || 'https://timesofindia.indiatimes.com/rssfeedstopstories.cms'; 
+
+  let feed = await parser.parseURL(channelLink);
+
+  let feedItems = feed.items.map(item => ({
+    title: item.title,
+    link: item.link,
+    published: item.pubDate,
+    summary: item.contentSnippet
+  }));
+
+  return NextResponse.json(feedItems);
 }

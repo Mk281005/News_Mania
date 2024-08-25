@@ -10,11 +10,25 @@ const BussinesList = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const { state } = useMyContext();
 
- 
+ useEffect(() => {
+    const fetchData = async () => {
+      try {
+        if (state.channelLink) {
+          const response = await fetch(`/api/data?channelLink=${encodeURIComponent(state.channelLink)}`);
+          const result = await response.json();
+          console.log(result)
+          setData(result);
+        }
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
 
-  
+    fetchData();
+  }, [state.channelLink]);
   useEffect(() => {
     const fetchData = async () => {
+      
       try {
         const url = process.env.NEXT_PUBLIC_API_URL;
         const response = await fetch(url);
