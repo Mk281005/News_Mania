@@ -17,28 +17,28 @@
         "id": 3,
         "place": "The Indian Express",
         "value": "The Indian Express",
-        "link":"https://www.hindustantimes.com/feeds/rss/trending/rssfeed.xml",
+        "link":"https://indianexpress.com/section/sports/feed/",
         "icon": "/Indexp.png"
     },
     {
         "id": 4,
         "place": "NDTV",
         "value": "NDTV",
-        "link":"https://www.hindustantimes.com/feeds/rss/trending/rssfeed.xml",
+        "link":"https://feeds.feedburner.com/ndtvnews-top-stories",
         "icon": "/NDTV1.jpg"
     },
     {
         "id": 5,
         "place": "CNN-News18",
         "value": "CNN-News18",
-        "link":"https://www.hindustantimes.com/feeds/rss/trending/rssfeed.xml",
+        "link":"http://rss.cnn.com/rss/money_mostpopular.rss",
         "icon": "/cnn.jpg"
     },
     {
         "id": 6,
         "place": "BBC News",
         "value": "BBC News",
-        "link":"https://www.hindustantimes.com/feeds/rss/trending/rssfeed.xml",
+        "link":"https://feeds.bbci.co.uk/news/rss.xml",
         "icon": "/bbc.jpg"
     }
 ]

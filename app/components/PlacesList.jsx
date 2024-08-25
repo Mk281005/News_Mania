@@ -20,7 +20,7 @@ const PlacesList = ({ data, index }) => {
               </div>
               <div className="flex justify-center gap-1 mt-auto">
                 <a
-                  href={article.url || article.link}
+                  href={article.url || article.link} target="_blank"
                   className="text-[14px] border-2 p-3 bg-black text-white rounded-xl transition duration-300 ease-in-out transform hover:bg-white hover:text-black hover:scale-105 "
                 >
                   Read More
