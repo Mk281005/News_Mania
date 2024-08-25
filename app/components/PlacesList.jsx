@@ -1,8 +1,8 @@
 "use client"
 
-
+import { useMyContext } from "./MyContext.js";
 const PlacesList = ({ data, index }) => {
- 
+  const { state } = useMyContext();
   
   const articlesToShow = data.slice(index, index + 4);
 
@@ -14,7 +14,7 @@ const PlacesList = ({ data, index }) => {
             <div className="flex flex-col justify-between border-2 p-3 items-center h-48 rounded-xl">
               <div className="m-3">
                 <h1 className="font-semibold">
-                  {article.author || "Unknown Author"} Publications
+                  {article.author || state.channelName || "Unknown Author"} Publications
                 </h1>
                 <h1 className="text-[14px] font-medium pt-2">{article.title}</h1>
               </div>

@@ -5,9 +5,10 @@ import Image from "next/image";
 import { useMyContext } from "./MyContext";
 function Category() {
   const { state, setState } = useMyContext();
-  const Channels =(link) =>{
-        setState({ ...state, channelLink: link });
-        console.log(state.channelLink );
+  const Channels =(link,name) =>{
+        setState({ ...state, channelLink: link ,channelName:name});
+
+        console.log(state.channelLink,state.channelName );
   }
   return (
     <div className="m-3">
@@ -18,7 +19,7 @@ function Category() {
             <div
               key={item.id}
               className="flex flex-col p-2 items-center justify-center font-semibold text-sm cursor-pointer rounded-xl h-[80px] transition duration-300 ease-in-out transform hover:bg-white hover:scale-105"
-              onClick={()=>{Channels(item.link)}}
+              onClick={()=>{Channels(item.link,item.value)}}
             >
               <div className="relative w-[80px] h-[80px]">
                 <Image
