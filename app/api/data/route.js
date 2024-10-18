@@ -4,7 +4,7 @@ const parser = new Parser();
 
 export async function GET(request) {
   const { searchParams } = new URL(request.url);
-  const channelLink = searchParams.get('channelLink') || 'https://timesofindia.indiatimes.com/rssfeedstopstories.cms'; 
+  const channelLink = searchParams.get('channelLink') ; 
 
   let feed = await parser.parseURL(channelLink);
 
