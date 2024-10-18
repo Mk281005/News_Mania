@@ -8,9 +8,9 @@ const PlacesList = ({ data, index }) => {
 
   return (
     <div className="ml-20">
-      <div className="grid grid-cols-2 gap-x-52 w-content">
+      <div className="grid grid-cols-2 gap-x-52 w-content ">
         {articlesToShow.map((article, i) => (
-          <div key={i} className=" m-2 w-96 ">
+          <div key={i} className=" m-2 w-96 shadow-xl rounded-xl">
             <div className="flex flex-col justify-between border-2 p-3 items-center h-48 rounded-xl">
               <div className="m-3">
                 <h1 className="font-semibold">
