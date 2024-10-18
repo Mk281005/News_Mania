@@ -13,7 +13,7 @@ const BussinesList = () => {
  useEffect(() => {
     const fetchData = async () => {
       try {
-        if (state.channelLink=='') {
+        if (state.channelLink) {
           const response = await fetch(`/api/data?channelLink=${encodeURIComponent(state.channelLink)}`);
           const result = await response.json();
           console.log(result)
