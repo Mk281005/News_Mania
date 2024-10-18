@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import PlacesList from "./PlacesList.jsx";
+import PlacesList from "./Display.jsx";
 import { useMyContext } from "./MyContext.js";
 
 
@@ -13,12 +13,13 @@ const BussinesList = () => {
  useEffect(() => {
     const fetchData = async () => {
       try {
-        if (state.channelLink) {
+        if (state.channelLink=='') {
           const response = await fetch(`/api/data?channelLink=${encodeURIComponent(state.channelLink)}`);
           const result = await response.json();
           console.log(result)
           setData(result);
         }
+        
       } catch (error) {
         console.error("Error fetching data:", error);
       }

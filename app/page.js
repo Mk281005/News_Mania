@@ -1,6 +1,6 @@
 import SearchBar from "./components/SearchBar";
 import Categeory from "./components/Categeory";
-import BussinesList from "./components/BussinesList";
+import BussinesList from "./components/Dataset";
 import NewsType from "./components/NewsType";
 export default function Home() {
   return (
