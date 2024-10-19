@@ -5,7 +5,9 @@
 .colorown{
   background-color: rgb(187, 192, 194);
 }
-
+.invert{
+  filter: invert(1);
+}
 .filter-black {
   filter: brightness(0) saturate(100%);
 }
