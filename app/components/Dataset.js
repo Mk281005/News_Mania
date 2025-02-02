@@ -10,8 +10,10 @@ const BussinesList = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const { state } = useMyContext();
 
- useEffect(() => {
+
+  useEffect(() => {
     const fetchData = async () => {
+      
       try {
         if (state.channelLink) {
           const response = await fetch(`/api/data?channelLink=${encodeURIComponent(state.channelLink)}`);
@@ -19,7 +21,12 @@ const BussinesList = () => {
           console.log(result)
           setData(result);
         }
-        
+        else{
+        const url = process.env.NEXT_PUBLIC_API_URL;
+        const response = await fetch(url);
+        const result = await response.json();
+        setData(result.articles);
+      }
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -27,21 +34,6 @@ const BussinesList = () => {
 
     fetchData();
   }, [state.channelLink]);
-  useEffect(() => {
-    const fetchData = async () => {
-      
-      try {
-        const url = process.env.NEXT_PUBLIC_API_URL;
-        const response = await fetch(url);
-        const result = await response.json();
-        setData(result.articles);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
 
   const handleNext = () => {
     if (currentIndex + 4 < data.length) {

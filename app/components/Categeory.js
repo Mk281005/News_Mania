@@ -7,7 +7,6 @@ function Category() {
   const { state, setState } = useMyContext();
   const Channels =(link,name) =>{
         setState({ ...state, channelLink: link ,channelName:name});
-
         console.log(state.channelLink,state.channelName );
   }
   return (
