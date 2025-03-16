@@ -9,15 +9,14 @@ const PlacesList = ({ data, index }) => {
   const [Invert, setInvert] = useState([]);
 
   useEffect(() => {
-    if (data.length > 0) {
+    if (data && data.length > 0) { // Added check for data
       initializeState(data);
     }
   }, [data, items]);
 
   const initializeState = async (data) => {
     const newInvert = new Array(data.length).fill(false);
-    
-    // Check if each item is in the liked items
+   
     data.forEach((dataItem, idx) => {
       const isLiked = items.some(item => 
         (item.url && item.url === dataItem.url) || 
@@ -32,20 +31,16 @@ const PlacesList = ({ data, index }) => {
   const inverted = (relativeIndex, index) => {
     const actualIndex = relativeIndex + index;
     const currentItem = data[actualIndex];
-    
-    // Create a new array with the same values
+  
     const newInvert = [...Invert];
-    // Toggle only the clicked item
+  
     newInvert[actualIndex] = !newInvert[actualIndex];
     setInvert(newInvert);
 
     if (newInvert[actualIndex]) {
-      // Add only the clicked item
       setitems(prevItems => [...prevItems, currentItem]);
     } else {
-      // Remove only the clicked item
       setitems(prevItems => {
-        // Find the exact item to remove
         const itemToRemove = prevItems.find(item => 
           (currentItem.url && item.url === currentItem.url) || 
           (currentItem.link && item.link === currentItem.link)
@@ -53,7 +48,6 @@ const PlacesList = ({ data, index }) => {
         
         if (!itemToRemove) return prevItems;
         
-        // Return new array without the found item
         return prevItems.filter(item => item !== itemToRemove);
       });
     }
@@ -62,7 +56,7 @@ const PlacesList = ({ data, index }) => {
   return (
     <div className="ml-20">
       <div className="grid grid-cols-2 gap-x-52 w-content">
-        {data.slice(index, index + 4).map((article, relativeIndex) => {
+        {data && data.slice(index, index + 4).map((article, relativeIndex) => { // Added check for data
           const actualIndex = relativeIndex + index;
           
           return (

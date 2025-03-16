@@ -1,6 +1,7 @@
+import { ClerkProvider } from "@clerk/nextjs";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import  Navbar  from "./components/Navbar";
+import Navbar from "./components/Navbar";
 import { MyProvider } from "./components/MyContext";
 import { LikeProvider } from "./context/Contest";
 
@@ -13,15 +14,17 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={inter.className} >
-      <body className="bg-gray-200">
-        <LikeProvider>
-        <MyProvider>
-          <Navbar/>
-          {children}
-        </MyProvider>
-        </LikeProvider>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en" className={inter.className}>
+        <body className="bg-gray-200">
+          <LikeProvider>
+            <MyProvider>
+              <Navbar />
+              {children}
+            </MyProvider>
+          </LikeProvider>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

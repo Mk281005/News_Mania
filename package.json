@@ -9,10 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@clerk/nextjs": "^6.12.5",
+    "mongodb": "^6.14.2",
     "next": "14.2.4",
     "react": "^18",
     "react-dom": "^18",
-    "rss-parser": "^3.13.0"
+    "rss-parser": "^3.13.0",
+    "svix": "^1.61.4"
   },
   "devDependencies": {
     "eslint": "^8",

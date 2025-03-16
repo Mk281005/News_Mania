@@ -27,6 +27,7 @@ const BussinesList = () => {
         const result = await response.json();
         setData(result.articles);
       }
+      console.log(data)
       } catch (error) {
         console.error("Error fetching data:", error);
       }
