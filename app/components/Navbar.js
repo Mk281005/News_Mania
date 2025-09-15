@@ -16,7 +16,7 @@ function Sidebar() {
         <Link href='/like'>
           <img className='w-6 cursor-pointer' src="heart.png" alt="" />
         </Link>
-        <img src="search.svg" className='w-6 h-6 cursor-pointer' alt="" />
+        {/* <img src="search.svg" className='w-6 h-6 cursor-pointer' alt="" /> */}
         
         {/* Auth Buttons */}
         <SignedOut>
